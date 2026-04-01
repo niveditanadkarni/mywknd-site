@@ -1,20 +1,124 @@
 footer {
-  background-color: var(--light-color);
+  background-color: var(--dark-color);
+  color: #fff;
   font-size: var(--body-font-size-xs);
 }
 
-footer .footer > div {
-  margin: auto;
+footer .footer {
   max-width: 1200px;
+  margin: 0 auto;
   padding: 40px 24px 24px;
 }
 
-footer .footer p {
+/* suppress default section padding from fragment */
+footer .footer > div {
+  padding: 0;
   margin: 0;
 }
 
+footer .footer p {
+  margin: 0 0 8px;
+  color: rgb(255 255 255 / 70%);
+}
+
+footer .footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer .footer a:hover {
+  color: var(--brand-color);
+  text-decoration: none;
+}
+
+/* top row: logo | nav links | follow us */
+footer .footer .footer-top {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0 32px;
+  padding-bottom: 32px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid rgb(255 255 255 / 15%);
+}
+
+footer .footer .footer-brand,
+footer .footer .footer-brand:any-link {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #fff;
+  text-decoration: none;
+  flex-basis: 128px;
+  flex-shrink: 0;
+}
+
+footer .footer .footer-nav {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+footer .footer .footer-nav a,
+footer .footer .footer-nav a u {
+  font-family: var(--body-font-family);
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #fff;
+}
+
+footer .footer .footer-nav a:hover {
+  color: var(--brand-color);
+}
+
+footer .footer .social-links {
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+/* social links inside footer */
+footer .footer .social-links .social-links-label {
+  color: #fff;
+}
+
+footer .footer .social-links .social-links-list li a {
+  background-color: #fff;
+  color: #000;
+  border: none;
+}
+
+footer .footer .social-links .social-links-list li a:hover {
+  background-color: var(--brand-color);
+  color: #000;
+}
+
+/* mobile footer */
+@media (width < 900px) {
+  footer .footer .footer-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  footer .footer .footer-nav {
+    gap: 12px;
+  }
+
+  footer .footer .social-links {
+    margin-left: 0;
+  }
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
+  footer .footer {
     padding: 40px 32px 24px;
   }
 }

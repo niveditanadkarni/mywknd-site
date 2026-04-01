@@ -1,0 +1,120 @@
+.article-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.article-list ul > li > a {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: var(--text-color);
+  border: 1px solid var(--light-color);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease;
+}
+
+.article-list ul > li > a:hover {
+  box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
+  text-decoration: none;
+}
+
+.article-list .article-list-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: var(--dark-color);
+}
+
+.article-list .article-list-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.article-list .article-list-no-image {
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-color);
+}
+
+.article-list .article-list-body {
+  padding: 20px;
+}
+
+.article-list .article-list-body h3 {
+  font-size: var(--heading-font-size-s);
+  margin: 0 0 8px;
+  color: var(--text-color);
+}
+
+.article-list .article-list-body p {
+  font-size: var(--body-font-size-xs);
+  color: var(--dark-color);
+  margin: 0 0 16px;
+  line-height: 1.5;
+}
+
+.article-list .article-list-cta {
+  display: inline-block;
+  background-color: var(--brand-color);
+  color: #000;
+  padding: 8px 16px;
+  font-weight: 700;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 2px;
+}
+
+@media (width >= 600px) {
+  .article-list ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (width >= 900px) {
+  .article-list ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* featured variant — used on home page */
+.article-list.featured ul {
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+
+.article-list.featured ul > li > a {
+  flex-direction: row;
+  border-radius: 4px;
+}
+
+.article-list.featured .article-list-image {
+  width: 200px;
+  min-width: 200px;
+  aspect-ratio: unset;
+  height: 140px;
+}
+
+.article-list.featured .article-list-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.article-list.featured .article-list-cta {
+  align-self: flex-start;
+}
+
+@media (width >= 900px) {
+  .article-list.featured .article-list-image {
+    width: 260px;
+    min-width: 260px;
+    height: 160px;
+  }
+}

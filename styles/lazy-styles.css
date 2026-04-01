@@ -1,1 +1,40 @@
 /* add global styles that can be loaded post LCP here */
+
+/* magazine article pages only */
+.magazine-article main > .section:not(.hero-container) > div {
+  max-width: 760px;
+}
+
+/* hide broken about:error images from importer */
+img[src="about:error"] {
+  display: none;
+}
+
+/* pull quote */
+.magazine-article blockquote {
+  border-left: 4px solid var(--brand-color);
+  background-color: var(--light-color);
+  margin: 24px 0;
+  padding: 16px 24px;
+}
+
+.magazine-article blockquote p {
+  font-size: var(--body-font-size-s);
+  font-style: italic;
+  margin: 0;
+}
+
+/* inline images */
+.magazine-article main > .section p > picture {
+  display: block;
+  margin: 24px 0 32px 60px;
+  max-width: 640px;
+}
+
+.magazine-article main > .section p > picture img {
+  width: 100%;
+  height: auto;
+  display: block;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}

@@ -14,10 +14,15 @@
   /* colors */
   --background-color: white;
   --light-color: #f8f8f8;
-  --dark-color: #505050;
-  --text-color: #131313;
-  --link-color: #3b63fb;
-  --link-hover-color: #1d3ecf;
+  --dark-color: #2d2d2d;
+  --text-color: #202020;
+  --link-color: #222;
+  --link-hover-color: #ffea00;
+
+  /* wknd brand */
+  --brand-color: #ffea00;
+  --header-bg: #fff;
+  --header-text: #202020;
 
   /* fonts */
   --body-font-family: roboto, roboto-fallback, sans-serif;
@@ -37,7 +42,7 @@
   --heading-font-size-xs: 22px;
 
   /* nav height */
-  --nav-height: 64px;
+  --nav-height: 80px;
 }
 
 /* fallback fonts */
@@ -78,6 +83,7 @@ body {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-m);
   line-height: 1.6;
+  scrollbar-gutter: stable;
 }
 
 body.appear {
@@ -307,6 +313,10 @@ main > .section > div {
 }
 
 main > .section:first-of-type {
+  margin-top: 40px;
+}
+
+main > .section:first-of-type:has(.hero) {
   margin-top: 0;
 }
 

@@ -136,6 +136,15 @@ export default async function decorate(block) {
     brandLink.className = '';
     brandLink.closest('.button-container').className = '';
   }
+  // wrap brand text in a home link if not already a link
+  const brandHeading = navBrand.querySelector('h1, h2');
+  if (brandHeading && !brandHeading.querySelector('a')) {
+    const a = document.createElement('a');
+    a.href = '/';
+    a.textContent = brandHeading.textContent;
+    brandHeading.textContent = '';
+    brandHeading.append(a);
+  }
 
   const navSections = nav.querySelector('.nav-sections');
   if (navSections) {
@@ -164,8 +173,35 @@ export default async function decorate(block) {
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
+  // search box
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const searchForm = document.createElement('form');
+    searchForm.classList.add('nav-search');
+    searchForm.action = '/search';
+    searchForm.method = 'get';
+    searchForm.innerHTML = `
+      <input type="text" name="q" placeholder="Search" aria-label="Search">
+      <button type="submit" aria-label="Submit search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      </button>
+    `;
+    searchForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      window.location.href = '/search';
+    });
+    navTools.prepend(searchForm);
+  }
+
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
   navWrapper.append(nav);
   block.append(navWrapper);
+
+  // shrink header on scroll
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY > 50;
+    navWrapper.classList.toggle('scrolled', scrolled);
+    document.documentElement.style.setProperty('--nav-height', scrolled ? '56px' : '80px');
+  }, { passive: true });
 }

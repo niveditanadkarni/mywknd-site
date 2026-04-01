@@ -1,0 +1,90 @@
+.writer {
+  border-top: 3px solid var(--brand-color);
+  padding: 32px 0;
+  margin: 40px 0;
+}
+
+.writer .writer-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.writer .writer-avatar {
+  flex-shrink: 0;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: var(--dark-color);
+}
+
+.writer .writer-avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--dark-color);
+}
+
+.writer .writer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.writer .writer-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.writer .writer-name {
+  font-weight: 700;
+  font-size: var(--body-font-size-s);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+  color: var(--text-color);
+}
+
+.writer .writer-title {
+  font-size: var(--body-font-size-xs);
+  color: var(--dark-color);
+  margin: 0;
+}
+
+.writer .writer-social {
+  display: flex;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 0;
+}
+
+.writer .writer-social li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: var(--dark-color);
+  color: #fff;
+  border-radius: 2px;
+  text-decoration: none;
+}
+
+.writer .writer-social li a:hover {
+  background-color: var(--brand-color);
+  color: #000;
+}
+
+.writer .writer-social li a svg {
+  width: 16px;
+  height: 16px;
+}
+
+@media (width >= 900px) {
+  .writer .writer-avatar {
+    width: 100px;
+    height: 100px;
+  }
+}

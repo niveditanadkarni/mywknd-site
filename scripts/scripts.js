@@ -133,6 +133,9 @@ export function decorateMain(main) {
 async function loadEager(doc) {
   document.documentElement.lang = 'en';
   decorateTemplateAndTheme();
+  if (window.location.pathname.match(/^\/magazine\/[^/]+$/)) {
+    doc.body.classList.add('magazine-article');
+  }
   const main = doc.querySelector('main');
   if (main) {
     decorateMain(main);

@@ -1,0 +1,45 @@
+.social-links .social-links-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.social-links .social-links-label {
+  font-size: var(--body-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.social-links .social-links-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0;
+}
+
+.social-links .social-links-list li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  color: #000;
+  border: 1px solid rgb(255 255 255 / 20%);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.social-links .social-links-list li a:hover {
+  background-color: var(--brand-color);
+  color: #000;
+}
+
+.social-links .social-links-list li a svg {
+  width: 18px;
+  height: 18px;
+}
