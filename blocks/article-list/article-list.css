@@ -4,7 +4,7 @@
   margin: 0;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: var(--spacing-m);
 }
 
 .article-list ul > li > a {
@@ -43,10 +43,10 @@
 }
 
 .article-list .article-list-body {
-  padding: 20px;
+  padding: var(--spacing-m);
 }
 
-.article-list .article-list-body h3 {
+.article-list .article-list-body h2 {
   font-size: var(--heading-font-size-s);
   margin: 0 0 8px;
   color: var(--text-color);
@@ -86,7 +86,7 @@
 /* featured variant — used on home page */
 .article-list.featured ul {
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: var(--spacing-s);
 }
 
 /* mobile: image on top, content below */

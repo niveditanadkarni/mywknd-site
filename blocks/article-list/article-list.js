@@ -29,7 +29,7 @@ export default async function decorate(block) {
       <a href="${article.path}">
         <div class="article-list-image">${image}</div>
         <div class="article-list-body">
-          <h3>${article.title}</h3>
+          <h2>${article.title}</h2>
           <p>${article.description || ''}</p>
           <span class="article-list-cta">Read More</span>
         </div>
