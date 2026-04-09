@@ -43,6 +43,13 @@
 
   /* nav height */
   --nav-height: 80px;
+
+  /* spacing */
+  --spacing-xs: 8px;
+  --spacing-s: 16px;
+  --spacing-m: 24px;
+  --spacing-l: 40px;
+  --spacing-xl: 64px;
 }
 
 /* fallback fonts */

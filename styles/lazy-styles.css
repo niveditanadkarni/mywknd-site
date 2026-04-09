@@ -27,7 +27,7 @@ img[src="about:error"] {
 /* inline images */
 .magazine-article main > .section p > picture {
   display: block;
-  margin: 24px 0 32px 60px;
+  margin: 24px auto 32px;
   max-width: 640px;
 }
 

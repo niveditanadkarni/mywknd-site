@@ -1,8 +1,14 @@
 export default async function decorate(block) {
-  const response = await fetch('/magazine/query-index.json');
-  if (!response.ok) return;
-
-  const json = await response.json();
+  let json;
+  try {
+    const response = await fetch('/magazine/query-index.json');
+    if (!response.ok) return;
+    json = await response.json();
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error('Failed to load article index', e);
+    return;
+  }
   const isFeatured = block.classList.contains('featured');
   const all = json.data.filter((a) => a.title && a.path !== '/magazine/');
   const articles = isFeatured ? all.slice(0, 2) : all;
